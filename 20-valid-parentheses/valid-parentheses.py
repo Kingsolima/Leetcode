@@ -4,16 +4,15 @@ class Solution(object):
         :type s: str
         :rtype: bool
         """
-        pairs = {"}": "{", ")": "(", "]": "["}
+        mapping = {"(": ")", "[": "]", "{": "}"}
         stack = []
-        for character in s:
-            if character in pairs.values():
-                stack.append(character)
-            elif character in pairs:
-                if not stack or stack[-1] !=pairs[character]:
-                    return False
-                stack.pop()
+        for i in s:
+            if i in mapping:
+                stack.append(i)
             else:
-                return False
+                if not stack or mapping[stack.pop()] != i:
+                    return False
         return not stack
-
+            
+            
+        
