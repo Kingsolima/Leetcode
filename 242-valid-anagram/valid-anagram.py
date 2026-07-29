@@ -3,6 +3,11 @@ class Solution:
     #countT
     #
     def isAnagram(self, s: str, t: str) -> bool:
-        listS = sorted(s)
-        listT = sorted(t)
-        return listT == listS
+        if len(s)!=len(t):
+            return False
+        countS = {}
+        countT = {}
+        for i in range(len(s)):
+            countT[t[i]]=1+countT.get(t[i],0)
+            countS[s[i]]=1+countS.get(s[i],0)
+        return countT==countS
