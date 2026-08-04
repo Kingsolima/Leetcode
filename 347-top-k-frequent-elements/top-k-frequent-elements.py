@@ -1,11 +1,4 @@
 class Solution:
-    # count = {}
-    # for loop len nums
-    #   count[nums[i]] += 1 + count[nums[i]].get(nums[i],0)
-    # 
-    #sorted(nums)
-    #for loop len nums
-    #
     def topKFrequent(self, nums: List[int], k: int) -> List[int]:
         count = {}
         for num in nums:
