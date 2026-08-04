@@ -1,8 +1,14 @@
 class Solution:
     def removeDuplicates(self, nums: List[int]) -> int:
-        write = 1
-        for i in range(1, len(nums)):
-            if nums[i] != nums[i-1]:
-                nums[write] = nums[i]
-                write +=1
-        return write
+        unique_elements = []
+        
+        # Identify unique elements
+        for num in nums:
+            if num not in unique_elements:
+                unique_elements.append(num)
+        
+        # Modify the original nums array in-place
+        for i in range(len(unique_elements)):
+            nums[i] = unique_elements[i]
+            
+        return len(unique_elements)
