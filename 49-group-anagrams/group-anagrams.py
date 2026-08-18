@@ -1,14 +1,34 @@
 class Solution:
+    #Brute
+    """
+    tot_ana = {}
+    for i in range:
+        sorted_v = sorted(strs[i])
+        if sorted_v in tot_ana.keys():
+            dict[sorted_v].append(strs[i])
+        else:
+            dict[sorted_v]=strs[i]
+    total_list = []
+    for key in tot_ana keys:
+        total_list.append([all values])
+    return total_lsit
+    """
+    #Optimal
+    """
+    """
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
-        group = {}
-        total = []
+        total_ana = {}
         for i in range(len(strs)):
-            new = sorted(strs[i])          # note: sorted() on a string returns a list, so...
-            new = ''.join(new)             # ...join it back, since a list can't be a dict key
-            if new in group:
-                group[new].append(strs[i])
+            sorted_v = "".join(sorted(strs[i]))
+            if sorted_v in total_ana.keys():
+                total_ana[sorted_v].append(strs[i])
             else:
-                group[new] = [strs[i]]     # <- initialize WITH the current string
-        for key in group:
-            total.append(group[key])
-        return total
+                total_ana[sorted_v]=[strs[i]]
+        
+        total_list = []
+
+        for i in total_ana.keys():
+            total_list.append(total_ana[i])
+
+        return total_list
+        
