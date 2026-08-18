@@ -22,11 +22,25 @@ class Solution:
         4. if nums[i-1]==nums[i]:
             return true
     return false
+    time: O(nlogn)
+    speed: O(n)
+    """
+    # MOST OPTIMAL
+    """
+    seen = ()
+    for i in range:
+        if nums[i] in seen:
+            return true
+        seend.add(nums[i])
+
+    return false
+    time: 
     """
     def containsDuplicate(self, nums: List[int]) -> bool:
-        new_nums = sorted(nums)
-        for i in range(1, len(new_nums)):
-            if new_nums[i-1] == new_nums[i]:
+        seen=set()
+        for i in range(len(nums)):
+            if nums[i] in seen:
                 return True
+            seen.add(nums[i])
         return False
         
