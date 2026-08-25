@@ -1,16 +1,24 @@
-class Solution(object):
-    def maxProfit(self, prices):
-        """
-        :type prices: List[int]
-        :rtype: int
-        """
-        low = prices[0]
-        output = 0
-        for i in range (1, len(prices)):
-            if prices [i]<low:
-                low = prices[i]
-            if prices[i]-low>output:
-                output = prices[i]-low
-        return output
+class Solution:
+    """
+    BRUTE: 
 
-            
+    Input = array of prices
+    output = profit or 0
+
+    method: use a nested for loop that has two pointers and has a max variable so that it checks for every difference calculated it goes through an if statement to determine if that is the max profit, else 0.
+    """
+    def maxProfit(self, prices: List[int]) -> int:
+        max = 0
+        low = prices[0]
+        for i in range(len(prices)):
+            if low > prices[i]:
+                low = prices[i]
+                continue
+            difference = prices[i]-low
+            if difference > max:
+                max = difference
+        if max == 0:
+            return max
+        return max
+
+        
