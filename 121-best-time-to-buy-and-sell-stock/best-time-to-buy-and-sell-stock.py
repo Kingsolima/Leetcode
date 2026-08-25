@@ -1,6 +1,6 @@
 class Solution:
     """
-    BRUTE: 
+    optimal: 
 
     Input = array of prices
     output = profit or 0
