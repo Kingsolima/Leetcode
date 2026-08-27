@@ -1,14 +1,19 @@
 class Solution:
+    """ Optimal: 
+    left = 0
+    for i in (1,nums):
+        if nums[left]!=nums[i]:
+            nums[left]=nums[i]
+            left+=1
+        else:
+            nums.remove(nums[i])
+    return len(nums), nums
+    """
     def removeDuplicates(self, nums: List[int]) -> int:
-        unique_elements = []
-        
-        # Identify unique elements
-        for num in nums:
-            if num not in unique_elements:
-                unique_elements.append(num)
-        
-        # Modify the original nums array in-place
-        for i in range(len(unique_elements)):
-            nums[i] = unique_elements[i]
+        left = 0
+        for i in range(1,len(nums)):
+            if nums[left]!=nums[i]:
+                left+=1
+                nums[left]=nums[i]
+        return len(nums[:left+1])
             
-        return len(unique_elements)
