@@ -1,22 +1,10 @@
 class Solution:
-    # Optimal:
-    """
-    left = 0
-    for loop:
-        if nums[left]!=nums[i]:
-            left+=1
-        else:
-            return True
-    Return False
-    Time: O(n)
-    Space: O(1)
-    """
+    # semi Optimal:
     def containsDuplicate(self, nums: List[int]) -> bool:
-        left = 0
-        nums.sort()
-        for i in range(1, len(nums)):
-            if nums[left]==nums[i]:
+        seen={}
+        for i in range(len(nums)):
+            if nums[i] in seen:
                 return True
-            else:
-                left+=1
+            seen[nums[i]]=1
+            
         return False
