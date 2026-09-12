@@ -1,10 +1,12 @@
 class Solution:
     # semi Optimal:
+    # Time: O(n)
+    # Space: O(n)
     def containsDuplicate(self, nums: List[int]) -> bool:
         seen={}
         for i in range(len(nums)):
             if nums[i] in seen:
                 return True
             seen[nums[i]]=1
-            
+
         return False
