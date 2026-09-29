@@ -21,4 +21,7 @@ class Solution:
                 l = r
             r += 1        
         return max_profit
+
+        # Time: O(n)
+        # Space: o(1)
         
