@@ -6,6 +6,7 @@ class Solution:
         while r < len(s):
             current_set = 0
             while r < len(s) and s[r] not in seen:
+                current_set = 0
                 seen.add(s[r])
                 current_set+=1
                 r+=1
@@ -17,5 +18,5 @@ class Solution:
                 l += 1
         return longest_set
 
-        # time: o(nlogn)
+        # time: o(n)
         # space: o(n)
