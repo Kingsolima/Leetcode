@@ -1,27 +1,24 @@
 class Solution:
     """
     brute: 
-
-    Input = array of prices
-    output = profit or 0
-
-    method: use a for loop that has two pointers and has a max variable so that it checks for every difference calculated it goes through an if statement to determine if that is the max profit, else 0.
-
-    time: o(n)
-    space: o(1)
+    profit = 0
+    for i in range loop:
+        buy = [i]
+        for j in range loop:
+            sell = [j]
+            if profit < sell-buy
+                profit = sell - buy
+    return profit
     """
     def maxProfit(self, prices: List[int]) -> int:
-        max = 0
-        low = prices[0]
-        for i in range(len(prices)):
-            if low > prices[i]:
-                low = prices[i]
-                continue
-            difference = prices[i]-low
-            if difference > max:
-                max = difference
-        if max == 0:
-            return max
-        return max
-
+        l,r = 0,1
+        max_profit=0
+        while r < len(prices):
+            if prices[r] > prices[l]:
+                profit = prices[r]-prices[l]
+                max_profit = max(max_profit, profit)
+            else:
+                l = r
+            r += 1        
+        return max_profit
         
