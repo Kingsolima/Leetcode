@@ -1,18 +1,21 @@
-class Solution(object):
-    def lengthOfLongestSubstring(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
-        first = max_l=0
-        longest = 0
-        char = set()
+class Solution:
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        l, r = 0, 0
+        longest_set = 0
+        seen = set()
+        while r < len(s):
+            current_set = 0
+            while r < len(s) and s[r] not in seen:
+                seen.add(s[r])
+                current_set+=1
+                r+=1
+            
+            longest_set = max(longest_set, r - l)
 
-        for right in range (len(s)):
-            while s[right] in char:
-                char.remove(s[first])
-                first += 1
+            if r < len(s):          # stopped on a duplicate
+                seen.remove(s[l])
+                l += 1
+        return longest_set
 
-            char.add(s[right])
-            max_l = max(max_l, right - first + 1)
-        return max_l
+        # time: o(nlogn)
+        # space: o(n)
