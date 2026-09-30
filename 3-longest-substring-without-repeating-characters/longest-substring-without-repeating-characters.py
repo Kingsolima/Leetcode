@@ -4,11 +4,8 @@ class Solution:
         longest_set = 0
         seen = set()
         while r < len(s):
-            current_set = 0
             while r < len(s) and s[r] not in seen:
-                current_set = 0
                 seen.add(s[r])
-                current_set+=1
                 r+=1
             
             longest_set = max(longest_set, r - l)
