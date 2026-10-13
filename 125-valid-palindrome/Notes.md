@@ -1,1 +1,1 @@
-<h2>valid-palindrome Notes</h2><hr>[ Time taken: 13m 16s ]
+<h2>valid-palindrome Notes</h2><hr>[ Time taken: 1hr 35m 39s ]
