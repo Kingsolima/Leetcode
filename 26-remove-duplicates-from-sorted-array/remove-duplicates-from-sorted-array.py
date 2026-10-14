@@ -1,19 +1,15 @@
 class Solution:
-    """ Optimal: 
-    left = 0
-    for i in (1,nums):
-        if nums[left]!=nums[i]:
-            nums[left]=nums[i]
-            left+=1
-        else:
-            nums.remove(nums[i])
-    return len(nums), nums
+    """ Optimal
+    time: o(n)
+    space: o(1)
+    replace each duplicate with a unique
     """
     def removeDuplicates(self, nums: List[int]) -> int:
-        left = 0
-        for i in range(1,len(nums)):
-            if nums[left]!=nums[i]:
-                left+=1
-                nums[left]=nums[i]
-        return len(nums[:left+1])
+        l = 1
+        for r in range(1, len(nums)):
+            if nums[r]!=nums[r-1]:
+                nums[l]=nums[r]
+                l+=1
+
+        return l
             
