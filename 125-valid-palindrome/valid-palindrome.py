@@ -1,21 +1,14 @@
 class Solution:
-    """
-    optimal
-    time: o(n)
-    space: o(1)
-    """
     def isPalindrome(self, s: str) -> bool:
-        l=0
-        r=len(s)-1
-        while l<r:
-            while l<r and not (s[r].isalnum()):
-                r-=1
-            while l<r and not (s[l].isalnum()):
-                l+=1
+        """
+        1. for loop
+            2.only alphanumeric letters
+            3. strip all spaces
+        4. return new_s==reversed_s
 
-            if s[r].lower() != s[l].lower():
-                return False
-            
-            l+=1
-            r-=1
-        return True
+        unoptimal
+        time: o(n)
+        space: o(n)
+        """
+        clean_s = ''.join(char.lower() for char in s if char.isalnum())
+        return clean_s == clean_s[::-1]
