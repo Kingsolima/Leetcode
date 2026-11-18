@@ -1,16 +1,8 @@
 class Solution:
-    """(Optimal
-    seen={}
-    for i in range:
-        result = target - nums[i]
-        if result in seen:
-            return [i, seen[result]]
-        seen[i] = i
-    """
-    def twoSum(self, nums: List[int], target: int) -> List[int]:
-        seen={}
+    def twoSum(self, nums: list[int], target: int) -> list[int]:
+        seen = {}
         for i in range(len(nums)):
-            result = target - nums[i]
-            if result in seen:
-                return [i, seen[result]]
-            seen[nums[i]] = i
+            value = target-nums[i]
+            if (value) in seen:
+                return [nums.index(value), i]
+            seen[nums[i]] = 1
