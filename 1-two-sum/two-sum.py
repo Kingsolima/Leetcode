@@ -4,5 +4,5 @@ class Solution:
         for i in range(len(nums)):
             value = target-nums[i]
             if (value) in seen:
-                return [nums.index(value), i]
-            seen[nums[i]] = 1
+                return [seen[value], i]
+            seen[nums[i]] = i
